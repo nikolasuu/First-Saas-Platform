@@ -75,6 +75,7 @@ const ChatWrapper = ({ fileId }: ChatWrapperProps) => {
             </Link>
           </div>
         </div>
+        <ChatInput isDisabled />
       </div>
     );
 
