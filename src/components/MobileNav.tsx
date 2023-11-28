@@ -1,11 +1,14 @@
 "use client";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/server";
 import { ArrowRight, Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
   const [isOpen, setOpen] = useState<boolean>(false);
+
+  const isOpenRef = useRef<boolean>(isOpen);
 
   const toggleOpen = () => {
     setOpen((prev) => !prev);
@@ -14,11 +17,14 @@ const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (isOpen) toggleOpen();
-  }, [pathname, isOpen]);
+    if (isOpenRef.current) {
+      toggleOpen();
+      return;
+    }
+  }, [pathname]);
 
   const closeOnCurrent = (href: string) => {
-    if (pathname === href) {
+    if (pathname !== href) {
       toggleOpen();
     }
   };
@@ -79,12 +85,9 @@ const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
                 </li>
                 <li className="my-3 h-px w-full bg-gray-300" />
                 <li>
-                  <Link
-                    className="flex items-center w-full font-semibold"
-                    href="/sign-out"
-                  >
-                    Sign Out
-                  </Link>
+                  <div className="flex items-center w-full font-semibold">
+                    <LogoutLink>Log out</LogoutLink>
+                  </div>
                 </li>
               </>
             )}

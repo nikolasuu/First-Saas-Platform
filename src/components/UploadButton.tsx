@@ -107,7 +107,7 @@ const UploadDropZone = ({ isSubscribed }: { isSubscribed: boolean }) => {
               {acceptedFiles && acceptedFiles[0] ? (
                 <div className="max-w-xs bg-white flex items-center rounded-md overflow-hidden outline outline-[1] outline-zinc-200 divide-x divide-zinc-200">
                   <div className="px-3 py-2 h-full grid place-items-center">
-                    <File className="h-4 w-4 text-blue-500" />
+                    <File className="h-4 w-4 text-purple-500" />
                   </div>
                   <div className="px-3 py-2 h-full text-sm truncate">
                     {acceptedFiles[0].name}
@@ -136,7 +136,7 @@ const UploadDropZone = ({ isSubscribed }: { isSubscribed: boolean }) => {
               <input
                 {...getInputProps()}
                 type="file"
-                id="dropzone-file"
+                id="add-file"
                 className="hidden"
               />
             </label>

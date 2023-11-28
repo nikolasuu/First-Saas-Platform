@@ -36,9 +36,9 @@ const Dashboard = ({ subscriptionPlan }: PageProps) => {
   });
 
   return (
-    <main className="mx-auto max-w-7xl md:p-10">
+    <main className="mx-auto max-w-7xl p-6 lx:p-10">
       <div className="mt-8 flex flex-col items-start justify-between gap-4 border-b border-gray-200 pb-5 sm:flex-row sm:items-center sm:gap-0">
-        <h1 className="mb-3 font-bold text-5xl text-gray-900">My files</h1>
+        <h1 className="mb-3 font-bold text-5xl text-gray-900 ">My files</h1>
         <UploadButton isSubscribed={subscriptionPlan.isSubscribed} />
       </div>
 
@@ -61,7 +61,7 @@ const Dashboard = ({ subscriptionPlan }: PageProps) => {
                   className="flex flex-col gap-2"
                 >
                   <div className="pt-6 px-6 flex w-full items-center justify-between space-x-6">
-                    <div className="h-10 w-10 flex-shrink-0 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500">
+                    <div className="h-10 w-10 flex-shrink-0 rounded-full bg-gradient-to-r from-purple-600 to-blue-600">
                       {" "}
                     </div>
                     <div className="flex-1 truncate">
@@ -82,7 +82,9 @@ const Dashboard = ({ subscriptionPlan }: PageProps) => {
 
                   <div className="flex items-center gap-2">
                     <MessageSquare className="h-4 w-4" />
-                    mocked
+                    {file.uploadStatus === "SUCCESS"
+                      ? "Ready to chat"
+                      : file.uploadStatus}
                   </div>
 
                   <Button

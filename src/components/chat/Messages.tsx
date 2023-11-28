@@ -91,8 +91,8 @@ const Messages = ({ fileId }: MessagesProps) => {
           <Skeleton className="h-16" />
         </div>
       ) : (
-        <div className="flex-1 flex flex-col item-center justify-center gap-2">
-          <MessageSquare className="h-8 w-8 text-blue-500" />
+        <div className="flex-1 flex flex-col items-center justify-center gap-2">
+          <MessageSquare className="h-8 w-8 text-purple-600" />
           <h3 className="font-semibold text-xl">You&apos;re all set!</h3>
           <p>Ash your first question to get started.</p>
         </div>
