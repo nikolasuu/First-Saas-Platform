@@ -114,7 +114,7 @@ const Page = () => {
                     <p className="text-gray-500">per month</p>
                   </div>
 
-                  <div className="flex h-20 items-center justify-center border-b border-t border-gray-200 bg-gray-50">
+                  <div className="flex h-20 items-center justify-center border-b border-t border-gray-200 bg-zinc-100">
                     <div className="flex items-center space-x-1">
                       <p>{quota.toLocaleString()} PDFs/mo included</p>
 
@@ -136,7 +136,7 @@ const Page = () => {
                           {negative ? (
                             <Minus className="h-6 w-6 text-gray-300" />
                           ) : (
-                            <Check className="h-6 w-6 text-blue-500" />
+                            <Check className="h-6 w-6 text-purple-500" />
                           )}
                         </div>
                         {footnote ? (

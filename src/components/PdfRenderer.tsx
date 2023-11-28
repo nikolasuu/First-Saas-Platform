@@ -129,8 +129,9 @@ const PdfRenderer = ({ url }: PdfRendererProp) => {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button className="gap-1.5" aria-label="zoom" variant="ghost">
-                <Search className="h-4 w-4" />
-                {scale * 100}%<ChevronDown className="h-3 w-3 opacity-50" />
+                <Search className="h-4 w-4 hidden md:block" />
+                {scale * 100}%
+                <ChevronDown className="h-3 w-3 opacity-50" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>

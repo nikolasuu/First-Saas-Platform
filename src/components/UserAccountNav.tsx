@@ -61,10 +61,10 @@ const UserAccountNav = async ({
         </div>
         <DropdownMenuSeparator />
 
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem asChild className="cursor-pointer">
           <Link href={"/dashboard"}>Dashboard</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem asChild className="cursor-pointer">
           {subscriptionPlan?.isSubscribed ? (
             <Link href={"/dashboard/billing"}>Manage Subscription</Link>
           ) : (
